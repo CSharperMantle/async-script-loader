@@ -1,7 +1,9 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    node: true,
+    es2021: true,
+    jasmine: true
   },
   extends: [
     'eslint:recommended'
@@ -14,5 +16,8 @@ module.exports = {
   },
   plugins: [
     'html'
-  ]
+  ],
+  globals: {
+    "AsyncScriptLoader": "writeable"
+  }
 }
