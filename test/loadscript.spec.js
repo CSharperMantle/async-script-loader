@@ -7,13 +7,16 @@ describe('loadScript functionality', function() {
 
     // Helpers
 
-    function truncateScriptsDiv() {
-        while (scriptsDivElem.firstChild) {
-            scriptsDivElem.removeChild(scriptsDivElem.firstChild)
+    function truncateElemContent(elem) {
+        while (elem.firstChild) {
+            elem.removeChild(elem.firstChild)
         }
     }
 
     it('single loadScript', function() {
+        const scriptsDivElem = document.createElement('div')
+        bodyElem.insertAdjacentElement('beforeend', scriptsDivElem)
+
         AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', scriptsDivElem, () => (typeof $ !== 'undefined'),
           false, null, null)
         .then(() => {
@@ -23,11 +26,14 @@ describe('loadScript functionality', function() {
             fail(reason)
         })
         .finally(() => {
-            truncateScriptsDiv()
+            truncateElemContent(scriptsDivElem)
         })
     })
 
     it('chaining loadScript', function() {
+        const scriptsDivElem = document.createElement('div')
+        bodyElem.insertAdjacentElement('beforeend', scriptsDivElem)
+
         AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', scriptsDivElem, () => (typeof $ !== 'undefined'),
           true, 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==', 'anonymous')
         .then(() => {
@@ -51,11 +57,14 @@ describe('loadScript functionality', function() {
             fail(reason)
         })
         .finally(() => {
-            truncateScriptsDiv()
+            truncateElemContent(scriptsDivElem)
         })
     })
 
     it('rejected loadScript promise', function() {
+        const scriptsDivElem = document.createElement('div')
+        bodyElem.insertAdjacentElement('beforeend', scriptsDivElem)
+
         let isRejected = false
         AsyncScriptLoader.loadScript('https://non-existent.nope/no-such-thing.js', scriptsDivElem, () => true,
           false, null, null)
@@ -64,7 +73,7 @@ describe('loadScript functionality', function() {
         })
         .finally(() => {
             expect(isRejected).toBeTrue()
-            truncateScriptsDiv()
+            truncateElemContent(scriptsDivElem)
         })
     })
 })
