@@ -18,12 +18,3 @@ jobs:
   include:
     - stage: test
       script: npm run test-firefox
-
-deploy:
-  on:
-    tags: true
-    branch: main
-  provider: npm
-  email: "mantlejonse@foxmail.com"
-  api_key: "$NPM_AUTH_TOKEN"
-  skip_cleanup: true
