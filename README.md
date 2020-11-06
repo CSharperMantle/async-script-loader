@@ -1,5 +1,7 @@
 # async-script-loader
 
+[![Build Status](https://travis-ci.com/CSharperMantle/async-script-loader.svg?branch=main)](https://travis-ci.com/CSharperMantle/async-script-loader)
+
 Asynchronous loader for script tags when dynamic loading is required
 
 ## Usage
@@ -29,32 +31,24 @@ window.AsyncScriptLoader = {
 A live example may be found [here](http://www.nbxiaoshi.net/bjzy_index.asp?BigClassId=448), where its JS source code is available [here](https://github.com/CSharperMantle/CSharperMantle.github.io/blob/master/assets/js/xs-school-mainpage.js). The core part of the code is listed here.
 
 ```js
-loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', body, () => {
-            return (typeof $ !== 'undefined');
-        },
-        true, 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==', 'anonymous')
-    .then(() => {
-        return loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', body, () => {
-                return (typeof gsap !== 'undefined');
-            },
-            false, null, null)
-    })
-    .then(() => {
-        return loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomEase-3.5.1.min.js', body, () => {
-                return (typeof CustomEase !== 'undefined');
-            },
-            false, null, null)
-    })
-    .then(() => {
-        return loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomWiggle-3.4.3.min.js', body, () => {
-                return (typeof CustomWiggle !== 'undefined');
-            },
-            false, null, null);
-    })
-    .then(() => {
-        loadDropper()
-    })
-    .catch((reason) => {
-        console.log(reason)
-    })
+AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', body, () => { return (typeof $ !== 'undefined'); },
+  true, 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==', 'anonymous')
+.then(() => {
+  return AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', body, () => { return (typeof gsap !== 'undefined'); },
+    false, null, null)
+})
+.then(() => {
+  return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomEase-3.5.1.min.js', body, () => { return (typeof CustomEase !== 'undefined'); },
+    false, null, null)
+})
+.then(() => {
+  return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomWiggle-3.4.3.min.js', body, () => { return (typeof CustomWiggle !== 'undefined'); },
+    false, null, null);
+})
+.then(() => {
+  loadDropper()
+})
+.catch((reason) => {
+  console.log(reason)
+})
 ```

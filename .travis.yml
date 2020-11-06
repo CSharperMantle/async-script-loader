@@ -5,3 +5,16 @@ node_js:
 dist: bionic
 services:
   - xvfb
+
+cache:
+  directories:
+  - "$HOME/.npm"
+
+install:
+  - npm ci
+  - npm i -g karma-cli
+
+jobs:
+  include:
+    - stage: test
+      script: npm run test-firefox
