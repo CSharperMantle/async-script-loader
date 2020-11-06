@@ -1,6 +1,6 @@
 # async-script-loader
 
-Asynchronous loader for script tags when dynamic loading of them is required
+Asynchronous loader for script tags when dynamic loading is required
 
 ## Usage
 ### Installation

@@ -4,7 +4,9 @@
     "description": "asynchoronus script tag loader",
     "main": "src/index.js",
     "scripts": {
-        "test": "exit 1;"
+        "test": "karma start --single-run",
+        "test-chrome": "karma start --browsers Chrome --single-run",
+        "test-firefox": "karma start --browsers Firefox --single-run"
     },
     "repository": {
         "type": "git",
