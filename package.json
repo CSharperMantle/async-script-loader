@@ -1,5 +1,5 @@
 {
-    "name": "async-script-loader-",
+    "name": "@csharpermantle/async-script-loader",
     "version": "0.1.0",
     "description": "asynchoronus script tag loader",
     "main": "src/index.js",
@@ -10,7 +10,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/CSharperMantle/async-script-loader.git"
+        "url": "git://github.com/CSharperMantle/async-script-loader.git"
     },
     "keywords": [
         "browser",
