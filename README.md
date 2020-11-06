@@ -28,7 +28,7 @@ window.AsyncScriptLoader = {
 
 ## Example
 
-A live example may be found [here](http://www.nbxiaoshi.net/bjzy_index.asp?BigClassId=448), where its JS source code is available [here](https://github.com/CSharperMantle/CSharperMantle.github.io/blob/master/assets/js/xs-school-mainpage.js). The core part of the code is listed here.
+A live example may be found [here](http://www.nbxiaoshi.net/bjzy_index.asp?BigClassId=448), while its JS source code is available [here](https://github.com/CSharperMantle/CSharperMantle.github.io/blob/master/assets/js/xs-school-mainpage.js). The core part of the code is listed below.
 
 ```js
 AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', body, () => { return (typeof $ !== 'undefined'); },
