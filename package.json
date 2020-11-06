@@ -1,6 +1,6 @@
 {
     "name": "@csharpermantle/async-script-loader",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "asynchoronus script tag loader",
     "main": "src/index.js",
     "scripts": {
