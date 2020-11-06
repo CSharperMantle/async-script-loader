@@ -1,5 +1,5 @@
 {
-    "name": "async-script-loader",
+    "name": "async-script-loader-",
     "version": "0.1.0",
     "description": "asynchoronus script tag loader",
     "main": "src/index.js",
@@ -35,5 +35,6 @@
         "karma-firefox-launcher": "^2.1.0",
         "karma-jasmine": "^4.0.1",
         "utf-8-validate": "^5.0.3"
-    }
+    },
+    "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
