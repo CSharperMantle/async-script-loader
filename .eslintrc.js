@@ -12,12 +12,13 @@ module.exports = {
     ecmaVersion: 12
   },
   rules: {
-    "space-before-function-paren": "off",
+    'space-before-function-paren': 'off'
   },
   plugins: [
-    'html'
+    'node',
+    'promise'
   ],
   globals: {
-    "AsyncScriptLoader": "writeable"
+    AsyncScriptLoader: 'writeable'
   }
 }
