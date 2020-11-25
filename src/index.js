@@ -13,7 +13,7 @@
                     resolve()
                 })
                 scriptElem.addEventListener('error', function() {
-                    reject(`AsyncScriptLoader: ${url} fails to load`)
+                    reject(new Error(`AsyncScriptLoader: ${url} fails to load`))
                 })
                 baseElem.insertAdjacentElement('afterbegin', scriptElem)
             })
