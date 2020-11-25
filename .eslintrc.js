@@ -6,7 +6,9 @@ module.exports = {
     jasmine: true
   },
   extends: [
-    'eslint-config-standard'
+    'eslint-config-standard',
+    'plugin:promise/recommended',
+    'plugin:node/recommended'
   ],
   parserOptions: {
     ecmaVersion: 12
